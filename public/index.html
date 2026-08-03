@@ -1,10 +1,536 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl" class="dark">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickShop</title>
+    <link rel="stylesheet" href="styles/app.css">
+
+<script>
+    document.documentElement.classList.toggle(
+        "dark",
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches),
+    );
+</script>
 </head>
-<body>
-$END$
+<body class="font-sahel dark:bg-neutral-800 h-1000">
+    <svg class="hidden">
+    <symbol id="home" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+                d="M13.2124 4.1597L4.78918 10.9055C3.84111 11.6591 3.23338 13.2514 3.44001 14.4426L5.05658 24.1177C5.34829 25.8437 7.00132 27.2415 8.7516 27.2415H22.3649C24.103 27.2415 25.7682 25.8315 26.0599 24.1177L27.6765 14.4426C27.8709 13.2514 27.2632 11.6591 26.3273 10.9055L17.9041 4.17186C16.6035 3.12656 14.5008 3.12655 13.2124 4.1597Z"
+                stroke="currentColor" stroke-width="1.98895" stroke-linecap="round" stroke-linejoin="round" />
+        <path opacity="0.4"
+              d="M15.5582 19.5718C17.2364 19.5718 18.5969 18.2113 18.5969 16.5331C18.5969 14.8549 17.2364 13.4945 15.5582 13.4945C13.88 13.4945 12.5195 14.8549 12.5195 16.5331C12.5195 18.2113 13.88 19.5718 15.5582 19.5718Z"
+              stroke="currentColor" stroke-width="1.98895" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="building" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2.82373 21.9143H22.7132" stroke="currentColor" stroke-width="1.98895" stroke-miterlimit="10"
+              stroke-linecap="round" stroke-linejoin="round" />
+        <path
+                d="M17.7408 2.02484H7.79602C4.81259 2.02484 3.81812 3.80495 3.81812 6.00274V21.9143H21.7187V6.00274C21.7187 3.80495 20.7242 2.02484 17.7408 2.02484Z"
+                stroke="currentColor" stroke-width="1.98895" stroke-miterlimit="10" stroke-linecap="round"
+                stroke-linejoin="round" />
+        <path opacity="0.4" d="M7.79614 16.4447H10.7796" stroke="currentColor" stroke-width="1.98895"
+              stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+        <path opacity="0.4" d="M14.7573 16.4447H17.7407" stroke="currentColor" stroke-width="1.98895"
+              stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+        <path opacity="0.4" d="M7.79614 11.9696H10.7796" stroke="currentColor" stroke-width="1.98895"
+              stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+        <path opacity="0.4" d="M14.7573 11.9696H17.7407" stroke="currentColor" stroke-width="1.98895"
+              stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+        <path opacity="0.4" d="M7.79614 7.49445H10.7796" stroke="currentColor" stroke-width="1.98895"
+              stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+        <path opacity="0.4" d="M14.7573 7.49445H17.7407" stroke="currentColor" stroke-width="1.98895"
+              stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="people" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path opacity="0.4"
+              d="M22.4167 8.76076C22.3438 8.74861 22.2587 8.74861 22.1858 8.76076C20.5084 8.69999 19.1714 7.32651 19.1714 5.62485C19.1714 3.88673 20.5692 2.48894 22.3073 2.48894C24.0454 2.48894 25.4432 3.89888 25.4432 5.62485C25.4311 7.32651 24.094 8.69999 22.4167 8.76076Z"
+              stroke="currentColor" stroke-width="1.98895" stroke-linecap="round" stroke-linejoin="round" />
+        <path opacity="0.4"
+              d="M21.1649 17.6094C22.8301 17.8889 24.6654 17.5972 25.9538 16.7342C27.6677 15.5917 27.6677 13.7199 25.9538 12.5773C24.6533 11.7144 22.7936 11.4226 21.1284 11.7143"
+              stroke="currentColor" stroke-width="1.98895" stroke-linecap="round" stroke-linejoin="round" />
+        <path opacity="0.4"
+              d="M7.79459 8.76076C7.86752 8.74861 7.9526 8.74861 8.02552 8.76076C9.70287 8.69999 11.0399 7.32651 11.0399 5.62485C11.0399 3.88673 9.6421 2.48894 7.90398 2.48894C6.16586 2.48894 4.76807 3.89888 4.76807 5.62485C4.78022 7.32651 6.11724 8.69999 7.79459 8.76076Z"
+              stroke="currentColor" stroke-width="1.98895" stroke-linecap="round" stroke-linejoin="round" />
+        <path opacity="0.4"
+              d="M9.04648 17.6094C7.38128 17.8889 5.54593 17.5972 4.25753 16.7342C2.54371 15.5917 2.54371 13.7199 4.25753 12.5773C5.55808 11.7144 7.41775 11.4226 9.08294 11.7143"
+              stroke="currentColor" stroke-width="1.98895" stroke-linecap="round" stroke-linejoin="round" />
+        <path
+                d="M15.1269 17.8403C15.054 17.8282 14.9689 17.8282 14.896 17.8403C13.2186 17.7796 11.8816 16.4061 11.8816 14.7044C11.8816 12.9663 13.2794 11.5685 15.0175 11.5685C16.7556 11.5685 18.1534 12.9784 18.1534 14.7044C18.1413 16.4061 16.8042 17.7917 15.1269 17.8403Z"
+                stroke="currentColor" stroke-width="1.98895" stroke-linecap="round" stroke-linejoin="round" />
+        <path
+                d="M11.5898 21.669C9.87599 22.8116 9.87599 24.6834 11.5898 25.8259C13.5346 27.1265 16.7191 27.1265 18.6638 25.8259C20.3776 24.6834 20.3776 22.8116 18.6638 21.669C16.7312 20.3806 13.5346 20.3806 11.5898 21.669Z"
+                stroke="currentColor" stroke-width="1.98895" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="call" viewBox="0 0 28 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+                d="M25.1549 20.3122C25.1549 20.7099 25.0665 21.1188 24.8787 21.5166C24.6908 21.9144 24.4477 22.2901 24.1273 22.6436C23.5859 23.2403 22.9892 23.6713 22.3151 23.9475C21.6522 24.2238 20.9339 24.3674 20.1604 24.3674C19.0334 24.3674 17.829 24.1022 16.5582 23.5608C15.2875 23.0193 14.0168 22.2901 12.7571 21.3729C11.4864 20.4448 10.282 19.4171 9.13282 18.279C7.9947 17.1298 6.96708 15.9254 6.04995 14.6657C5.14387 13.4061 4.41459 12.1464 3.8842 10.8978C3.35382 9.63812 3.08862 8.4337 3.08862 7.28453C3.08862 6.53315 3.22122 5.81492 3.48641 5.15194C3.75161 4.4779 4.1715 3.85912 4.75713 3.30663C5.46431 2.6105 6.23779 2.26796 7.05547 2.26796C7.36487 2.26796 7.67426 2.33426 7.9505 2.46685C8.23779 2.59945 8.49194 2.79835 8.69083 3.08564L11.2544 6.6989C11.4533 6.97514 11.5969 7.22928 11.6964 7.47238C11.7958 7.70442 11.8511 7.93647 11.8511 8.14641C11.8511 8.4116 11.7737 8.6768 11.619 8.93094C11.4754 9.18508 11.2654 9.45028 11.0002 9.71547L10.1604 10.5884C10.0389 10.7099 9.98365 10.8536 9.98365 11.0304C9.98365 11.1188 9.9947 11.1961 10.0168 11.2845C10.05 11.3729 10.0831 11.4392 10.1052 11.5055C10.3041 11.8702 10.6466 12.3453 11.1328 12.9199C11.6301 13.4945 12.1604 14.0801 12.735 14.6657C13.3317 15.2514 13.9063 15.7928 14.4919 16.2901C15.0665 16.7762 15.5417 17.1077 15.9174 17.3066C15.9726 17.3287 16.0389 17.3619 16.1162 17.395C16.2046 17.4282 16.293 17.4392 16.3925 17.4392C16.5803 17.4392 16.724 17.3729 16.8455 17.2514L17.6853 16.4227C17.9616 16.1464 18.2267 15.9365 18.4809 15.8039C18.735 15.6492 18.9892 15.5718 19.2654 15.5718C19.4754 15.5718 19.6964 15.616 19.9395 15.7155C20.1825 15.8149 20.4367 15.9586 20.7129 16.1464L24.3704 18.7431C24.6577 18.942 24.8566 19.174 24.9781 19.4503C25.0886 19.7265 25.1549 20.0028 25.1549 20.3122Z"
+                stroke="currentColor" stroke-width="1.98895" stroke-miterlimit="10" />
+        <path opacity="0.4"
+              d="M21.3205 10.0028C21.3205 9.33978 20.8012 8.32321 20.0277 7.49448C19.3205 6.73205 18.3813 6.13536 17.4531 6.13536"
+              stroke="currentColor" stroke-width="1.98895" stroke-linecap="round" stroke-linejoin="round" />
+        <path opacity="0.4" d="M25.1879 10.0028C25.1879 5.72652 21.7294 2.26796 17.4531 2.26796"
+              stroke="currentColor" stroke-width="1.98895" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="sun" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+                d="M14.0223 21.5831C18.2105 21.5831 21.6056 18.1879 21.6056 13.9997C21.6056 9.81159 18.2105 6.41641 14.0223 6.41641C9.83414 6.41641 6.43896 9.81159 6.43896 13.9997C6.43896 18.1879 9.83414 21.5831 14.0223 21.5831Z"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path opacity="0.4"
+              d="M22.3521 22.3298L22.2005 22.1781M22.2005 5.82143L22.3521 5.66977L22.2005 5.82143ZM5.69214 22.3298L5.8438 22.1781L5.69214 22.3298ZM14.0221 2.42643V2.3331V2.42643ZM14.0221 25.6664V25.5731V25.6664ZM2.4488 13.9998H2.35547H2.4488ZM25.6888 13.9998H25.5955H25.6888ZM5.8438 5.82143L5.69214 5.66977L5.8438 5.82143Z"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="shopping-cart" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+                d="M2.35559 2.3331H4.3856C5.6456 2.3331 6.63726 3.4181 6.53226 4.66643L5.56392 16.2864C5.40059 18.1881 6.90558 19.8214 8.81892 19.8214H21.2439C22.9239 19.8214 24.3939 18.4448 24.5223 16.7764L25.1523 8.02644C25.2923 6.08977 23.8223 4.51476 21.8739 4.51476H6.81227"
+                stroke="currentColor" stroke-width="1.98895" stroke-miterlimit="10" stroke-linecap="round"
+                stroke-linejoin="round" />
+        <path opacity="0.4"
+              d="M18.9806 25.6664C19.786 25.6664 20.4389 25.0135 20.4389 24.2081C20.4389 23.4027 19.786 22.7498 18.9806 22.7498C18.1751 22.7498 17.5222 23.4027 17.5222 24.2081C17.5222 25.0135 18.1751 25.6664 18.9806 25.6664Z"
+              stroke="currentColor" stroke-width="1.98895" stroke-miterlimit="10" stroke-linecap="round"
+              stroke-linejoin="round" />
+        <path opacity="0.4"
+              d="M9.6473 25.6664C10.4527 25.6664 11.1056 25.0135 11.1056 24.2081C11.1056 23.4027 10.4527 22.7498 9.6473 22.7498C8.84188 22.7498 8.18896 23.4027 8.18896 24.2081C8.18896 25.0135 8.84188 25.6664 9.6473 25.6664Z"
+              stroke="currentColor" stroke-width="1.98895" stroke-miterlimit="10" stroke-linecap="round"
+              stroke-linejoin="round" />
+        <path opacity="0.4" d="M10.5221 9.3331H24.5221" stroke="currentColor" stroke-width="1.98895"
+              stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="profile-tick" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path opacity="0.4" d="M16.8689 22.2247L18.6422 23.9981L22.1889 20.4514" stroke="currentColor"
+              stroke-width="1.98895" stroke-linecap="round" stroke-linejoin="round" />
+        <path opacity="0.4"
+              d="M14.2089 12.6814C14.0922 12.6698 13.9522 12.6698 13.8239 12.6814C11.0472 12.5881 8.84221 10.3131 8.84221 7.5131C8.83054 4.65477 11.1522 2.3331 14.0105 2.3331C16.8689 2.3331 19.1905 4.65477 19.1905 7.5131C19.1905 10.3131 16.9739 12.5881 14.2089 12.6814Z"
+              stroke="currentColor" stroke-width="1.98895" stroke-linecap="round" stroke-linejoin="round" />
+        <path
+                d="M14.0105 25.4448C11.8871 25.4448 9.77547 24.9081 8.16547 23.8348C5.34214 21.9448 5.34214 18.8648 8.16547 16.9864C11.3738 14.8398 16.6355 14.8398 19.8438 16.9864"
+                stroke="currentColor" stroke-width="1.98895" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="element-equal" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+                d="M20.1667 7.58081V3.87748C20.1667 2.41998 19.58 1.83331 18.1225 1.83331H14.4192C12.9617 1.83331 12.375 2.41998 12.375 3.87748V7.58081C12.375 9.03831 12.9617 9.62498 14.4192 9.62498H18.1225C19.58 9.62498 20.1667 9.03831 20.1667 7.58081Z"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path
+                d="M9.62516 7.80998V3.64831C9.62516 2.35581 9.0385 1.83331 7.581 1.83331H3.87766C2.42016 1.83331 1.8335 2.35581 1.8335 3.64831V7.80081C1.8335 9.10248 2.42016 9.61581 3.87766 9.61581H7.581C9.0385 9.62498 9.62516 9.10248 9.62516 7.80998Z"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path
+                d="M9.62516 18.1225V14.4192C9.62516 12.9617 9.0385 12.375 7.581 12.375H3.87766C2.42016 12.375 1.8335 12.9617 1.8335 14.4192V18.1225C1.8335 19.58 2.42016 20.1667 3.87766 20.1667H7.581C9.0385 20.1667 9.62516 19.58 9.62516 18.1225Z"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path opacity="0.4" d="M13.75 14.2083H19.25" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" />
+        <path opacity="0.4" d="M13.75 17.875H19.25" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" />
+    </symbol>
+    <symbol id="close" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+                d="M11.0002 20.1667C16.0418 20.1667 20.1668 16.0417 20.1668 11C20.1668 5.95837 16.0418 1.83337 11.0002 1.83337C5.9585 1.83337 1.8335 5.95837 1.8335 11C1.8335 16.0417 5.9585 20.1667 11.0002 20.1667Z"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <g opacity="0.4">
+            <path d="M8.40576 13.5941L13.5941 8.40576" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M13.5941 13.5941L8.40576 8.40576" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round" />
+        </g>
+    </symbol>
+    <symbol id="moon" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+                d="M2.36811 14.49C2.78811 20.4983 7.88645 25.3867 13.9881 25.655C18.2931 25.8417 22.1431 23.835 24.4531 20.6733C25.4098 19.3783 24.8964 18.515 23.2981 18.8067C22.5164 18.9467 21.7114 19.005 20.8714 18.97C15.1664 18.7367 10.4998 13.965 10.4764 8.33002C10.4648 6.81335 10.7798 5.37835 11.3514 4.07168C11.9814 2.62502 11.2231 1.93668 9.76478 2.55502C5.14478 4.50335 1.98311 9.15835 2.36811 14.49Z"
+                stroke="currentColor" stroke-width="1.98895" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="burger" viewBox="0 0 24 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line y1="-1" x2="22.0227" y2="-1" transform="matrix(1 0 -0.0293503 0.999569 0.988281 2.5)"
+              stroke="currentColor" stroke-width="2" />
+        <line y1="-1" x2="22.0227" y2="-1" transform="matrix(1 0 -0.0293503 0.999569 0.988281 8.5)"
+              stroke="currentColor" stroke-width="2" />
+        <line y1="-1" x2="22.0227" y2="-1" transform="matrix(1 0 -0.0293503 0.999569 0.988281 14.5)"
+              stroke="currentColor" stroke-width="2" />
+    </symbol>
+    <symbol id="arrow-left" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9.57 5.92993L3.5 11.9999L9.57 18.0699" stroke="currentColor" stroke-width="1.5"
+              stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M20.5 12H3.67004" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"
+              stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="element-3" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+                d="M20.3874 8.19809V3.99572C20.3874 2.69057 19.795 2.16296 18.3233 2.16296H14.5837C13.1119 2.16296 12.5195 2.69057 12.5195 3.99572V8.18883C12.5195 9.50323 13.1119 10.0216 14.5837 10.0216H18.3233C19.795 10.0308 20.3874 9.50323 20.3874 8.19809Z"
+                stroke="currentColor" stroke-width="2.08267" stroke-linecap="round" stroke-linejoin="round" />
+        <path opacity="0.4"
+              d="M20.3874 18.6115V14.8719C20.3874 13.4001 19.795 12.8077 18.3233 12.8077H14.5837C13.1119 12.8077 12.5195 13.4001 12.5195 14.8719V18.6115C12.5195 20.0832 13.1119 20.6756 14.5837 20.6756H18.3233C19.795 20.6756 20.3874 20.0832 20.3874 18.6115Z"
+              stroke="currentColor" stroke-width="2.08267" stroke-linecap="round" stroke-linejoin="round" />
+        <path opacity="0.4"
+              d="M9.74239 8.19809V3.99572C9.74239 2.69057 9.14999 2.16296 7.67823 2.16296H3.93867C2.46692 2.16296 1.87451 2.69057 1.87451 3.99572V8.18883C1.87451 9.50323 2.46692 10.0216 3.93867 10.0216H7.67823C9.14999 10.0308 9.74239 9.50323 9.74239 8.19809Z"
+              stroke="currentColor" stroke-width="2.08267" stroke-linecap="round" stroke-linejoin="round" />
+        <path
+                d="M9.74239 18.6115V14.8719C9.74239 13.4001 9.14999 12.8077 7.67823 12.8077H3.93867C2.46692 12.8077 1.87451 13.4001 1.87451 14.8719V18.6115C1.87451 20.0832 2.46692 20.6756 3.93867 20.6756H7.67823C9.14999 20.6756 9.74239 20.0832 9.74239 18.6115Z"
+                stroke="currentColor" stroke-width="2.08267" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="shopping-cart" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+                d="M2.25024 2.25H4.20775C5.42275 2.25 6.379 3.29625 6.27775 4.5L5.34399 15.705C5.18649 17.5387 6.63774 19.1137 8.48274 19.1137H20.464C22.084 19.1137 23.5015 17.7863 23.6252 16.1775L24.2327 7.74C24.3677 5.87251 22.9502 4.35374 21.0715 4.35374H6.54775"
+                stroke="currentColor" stroke-width="2.08267" stroke-miterlimit="10" stroke-linecap="round"
+                stroke-linejoin="round" />
+        <path opacity="0.4"
+              d="M18.2813 24.7501C19.0579 24.7501 19.6875 24.1205 19.6875 23.3439C19.6875 22.5672 19.0579 21.9376 18.2813 21.9376C17.5046 21.9376 16.875 22.5672 16.875 23.3439C16.875 24.1205 17.5046 24.7501 18.2813 24.7501Z"
+              stroke="currentColor" stroke-width="2.08267" stroke-miterlimit="10" stroke-linecap="round"
+              stroke-linejoin="round" />
+        <path opacity="0.4"
+              d="M9.28125 24.7501C10.0579 24.7501 10.6875 24.1205 10.6875 23.3439C10.6875 22.5672 10.0579 21.9376 9.28125 21.9376C8.5046 21.9376 7.875 22.5672 7.875 23.3439C7.875 24.1205 8.5046 24.7501 9.28125 24.7501Z"
+              stroke="currentColor" stroke-width="2.08267" stroke-miterlimit="10" stroke-linecap="round"
+              stroke-linejoin="round" />
+        <path opacity="0.4" d="M10.125 9H23.625" stroke="currentColor" stroke-width="2.08267" stroke-miterlimit="10"
+              stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="right" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8.91016 19.92L15.4302 13.4C16.2002 12.63 16.2002 11.37 15.4302 10.6L8.91016 4.07996"
+              stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+              stroke-linejoin="round" />
+    </symbol>
+    <symbol id="left" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14.9998 19.92L8.47984 13.4C7.70984 12.63 7.70984 11.37 8.47984 10.6L14.9998 4.07996"
+              stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+              stroke-linejoin="round" />
+    </symbol>
+    <symbol id="calendar" viewBox="0 0 29 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9.91406 2.31641V5.79166" stroke="currentColor" stroke-width="2.08515" stroke-miterlimit="10"
+              stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M19.1812 2.31641V5.79166" stroke="currentColor" stroke-width="2.08515" stroke-miterlimit="10"
+              stroke-linecap="round" stroke-linejoin="round" />
+        <path opacity="0.4" d="M4.70117 10.5303H24.3943" stroke="currentColor" stroke-width="2.08515"
+              stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+        <path
+                d="M24.9734 9.84629V19.6929C24.9734 23.1681 23.2357 25.4849 19.1813 25.4849H9.91392C5.85945 25.4849 4.12183 23.1681 4.12183 19.6929V9.84629C4.12183 6.37104 5.85945 4.0542 9.91392 4.0542H19.1813C23.2357 4.0542 24.9734 6.37104 24.9734 9.84629Z"
+                stroke="currentColor" stroke-width="2.08515" stroke-miterlimit="10" stroke-linecap="round"
+                stroke-linejoin="round" />
+        <path opacity="0.4" d="M18.8275 15.8702H18.8379" stroke="currentColor" stroke-width="2.78021"
+              stroke-linecap="round" stroke-linejoin="round" />
+        <path opacity="0.4" d="M18.8275 19.3458H18.8379" stroke="currentColor" stroke-width="2.78021"
+              stroke-linecap="round" stroke-linejoin="round" />
+        <path opacity="0.4" d="M14.5423 15.8702H14.5527" stroke="currentColor" stroke-width="2.78021"
+              stroke-linecap="round" stroke-linejoin="round" />
+        <path opacity="0.4" d="M14.5423 19.3458H14.5527" stroke="currentColor" stroke-width="2.78021"
+              stroke-linecap="round" stroke-linejoin="round" />
+        <path opacity="0.4" d="M10.2547 15.8702H10.2651" stroke="currentColor" stroke-width="2.78021"
+              stroke-linecap="round" stroke-linejoin="round" />
+        <path opacity="0.4" d="M10.2546 19.3452H10.265" stroke="currentColor" stroke-width="2.78021"
+              stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="calling" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+                d="M23.7053 18.9265C23.7053 19.2983 23.6226 19.6805 23.4468 20.0523C23.2709 20.4241 23.0434 20.7752 22.7435 21.1057C22.2368 21.6634 21.6783 22.0661 21.0475 22.3243C20.427 22.5825 19.7547 22.7168 19.0308 22.7168C17.9759 22.7168 16.8487 22.4689 15.6594 21.9629C14.4701 21.4568 13.2808 20.7752 12.1018 19.918C10.9125 19.0505 9.78524 18.09 8.7097 17.0263C7.64449 15.9522 6.68271 14.8265 5.82434 13.6491C4.97631 12.4718 4.29375 11.2944 3.79734 10.1274C3.30094 8.95005 3.05273 7.82434 3.05273 6.75027C3.05273 6.04799 3.17684 5.37669 3.42504 4.75704C3.67324 4.12705 4.06623 3.5487 4.61435 3.03232C5.27622 2.38168 6.00015 2.06152 6.76544 2.06152C7.05501 2.06152 7.34458 2.12349 7.60313 2.24742C7.87201 2.37135 8.10987 2.55725 8.29603 2.82577L10.6953 6.2029C10.8815 6.4611 11.0159 6.69863 11.109 6.92584C11.2021 7.14272 11.2538 7.3596 11.2538 7.55582C11.2538 7.80369 11.1814 8.05155 11.0366 8.28909C10.9022 8.52662 10.7057 8.77448 10.4575 9.02235L9.67148 9.83823C9.55772 9.95183 9.50602 10.0861 9.50602 10.2513C9.50602 10.334 9.51636 10.4063 9.53704 10.4889C9.56807 10.5715 9.59909 10.6335 9.61978 10.6954C9.80593 11.0362 10.1265 11.4803 10.5816 12.0174C11.0469 12.5544 11.5434 13.1018 12.0811 13.6491C12.6396 14.1965 13.1774 14.7025 13.7255 15.1673C14.2632 15.6217 14.7079 15.9315 15.0596 16.1174C15.1113 16.1381 15.1733 16.1691 15.2457 16.2001C15.3284 16.231 15.4112 16.2414 15.5043 16.2414C15.6801 16.2414 15.8145 16.1794 15.9283 16.0658L16.7142 15.2912C16.9728 15.033 17.221 14.8368 17.4589 14.7129C17.6967 14.5683 17.9346 14.496 18.1931 14.496C18.3896 14.496 18.5965 14.5373 18.824 14.6303C19.0515 14.7232 19.2894 14.8575 19.5479 15.033L22.971 17.46C23.2399 17.6459 23.4261 17.8628 23.5398 18.121C23.6433 18.3792 23.7053 18.6374 23.7053 18.9265Z"
+                stroke="currentColor" stroke-width="2.08064" stroke-miterlimit="10" />
+        <path opacity="0.4"
+              d="M20.1167 9.29094C20.1167 8.67128 19.6306 7.72114 18.9067 6.94657C18.2448 6.23396 17.3658 5.67627 16.4971 5.67627"
+              stroke="currentColor" stroke-width="2.08064" stroke-linecap="round" stroke-linejoin="round" />
+        <path opacity="0.4" d="M23.7363 9.29087C23.7363 5.29407 20.4993 2.06152 16.4971 2.06152"
+              stroke="currentColor" stroke-width="2.08064" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="sms" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+                d="M3.05273 9.60425C3.05273 5.98957 5.12109 4.44043 8.22363 4.44043H18.5654C21.668 4.44043 23.7363 5.98957 23.7363 9.60425V16.8336C23.7363 20.4483 21.668 21.9974 18.5654 21.9974H8.22363"
+                stroke="currentColor" stroke-width="2.08064" stroke-miterlimit="10" stroke-linecap="round"
+                stroke-linejoin="round" />
+        <path opacity="0.4"
+              d="M18.5654 10.1206L15.3284 12.7025C14.2632 13.5494 12.5155 13.5494 11.4503 12.7025L8.22363 10.1206"
+              stroke="currentColor" stroke-width="2.08064" stroke-miterlimit="10" stroke-linecap="round"
+              stroke-linejoin="round" />
+        <path opacity="0.4" d="M3.05273 17.8662H9.25781" stroke="currentColor" stroke-width="2.08064"
+              stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+        <path opacity="0.4" d="M3.05273 13.7354H6.15527" stroke="currentColor" stroke-width="2.08064"
+              stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="map" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+                d="M2.8916 8.46067V18.5095C2.8916 20.4717 4.28774 21.2773 5.9838 20.3065L8.41412 18.9226C8.94155 18.6231 9.82061 18.5921 10.3687 18.8709L15.7982 21.5871C16.3463 21.8556 17.2253 21.835 17.7528 21.5355L22.2308 18.9742C22.7996 18.6437 23.2753 17.8382 23.2753 17.1772V7.1284C23.2753 5.16615 21.8791 4.3606 20.1831 5.3314L17.7528 6.7153C17.2253 7.0148 16.3463 7.04578 15.7982 6.76694L10.3687 4.0611C9.82061 3.79258 8.94155 3.81323 8.41412 4.11274L3.93612 6.67399C3.35698 7.00447 2.8916 7.81003 2.8916 8.46067Z"
+                stroke="currentcolor" stroke-width="2.08064" stroke-linecap="round" stroke-linejoin="round" />
+        <path opacity="0.4" d="M9.37598 4.55664V17.9826" stroke="currentcolor" stroke-width="2.08064"
+              stroke-linecap="round" stroke-linejoin="round" />
+        <path opacity="0.4" d="M16.791 7.26221V21.0806" stroke="currentcolor" stroke-width="2.08064"
+              stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="facebook" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path opacity="0.4"
+              d="M16.4406 10.75V14.16H19.4806C19.7002 14.16 19.8621 14.3565 19.8158 14.5761L19.3766 16.7724C19.3419 16.9342 19.2032 17.0498 19.0414 17.0498H16.4406V25.4301H12.9728V17.0498H11.0078C10.8113 17.0498 10.661 16.8995 10.661 16.703V14.5068C10.661 14.3102 10.8113 14.16 11.0078 14.16H12.9728V10.4033C12.9728 8.48447 14.5218 6.93555 16.4406 6.93555H19.5615C19.758 6.93555 19.9083 7.0858 19.9083 7.28231V10.0565C19.9083 10.253 19.758 10.4033 19.5615 10.4033H16.7873C16.5908 10.4033 16.4406 10.5535 16.4406 10.75Z"
+              stroke="currentColor" stroke-width="2.08064" stroke-miterlimit="10" stroke-linecap="round" />
+        <path
+                d="M17.5966 25.4307H10.6611C4.88153 25.4307 2.5697 23.1189 2.5697 17.3393V10.4039C2.5697 4.62432 4.88153 2.3125 10.6611 2.3125H17.5966C23.3761 2.3125 25.6879 4.62432 25.6879 10.4039V17.3393C25.6879 23.1189 23.3761 25.4307 17.5966 25.4307Z"
+                stroke="currentColor" stroke-width="2.08064" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="telegram" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+                d="M8.71508 7.30586L18.5288 4.03463C22.9328 2.56662 25.3255 4.97092 23.8691 9.37494L20.5979 19.1886C18.4016 25.7889 14.7952 25.7889 12.5989 19.1886L11.628 16.2757L8.71508 15.3048C2.11483 13.1085 2.11483 9.51365 8.71508 7.30586Z"
+                stroke="currentColor" stroke-width="2.08064" stroke-linecap="round" stroke-linejoin="round" />
+        <path opacity="0.34" d="M11.8472 15.7777L15.9853 11.6279" stroke="currentColor" stroke-width="2.08064"
+              stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="instagram" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+                d="M10.4033 25.4307H17.3387C23.1183 25.4307 25.4301 23.1189 25.4301 17.3393V10.4039C25.4301 4.62432 23.1183 2.3125 17.3387 2.3125H10.4033C4.62371 2.3125 2.31189 4.62432 2.31189 10.4039V17.3393C2.31189 23.1189 4.62371 25.4307 10.4033 25.4307Z"
+                stroke="currentColor" stroke-width="2.08064" stroke-linecap="round" stroke-linejoin="round" />
+        <path opacity="0.34"
+              d="M13.8709 17.9161C16.1053 17.9161 17.9166 16.1048 17.9166 13.8704C17.9166 11.636 16.1053 9.82471 13.8709 9.82471C11.6365 9.82471 9.8252 11.636 9.8252 13.8704C9.8252 16.1048 11.6365 17.9161 13.8709 17.9161Z"
+              stroke="currentColor" stroke-width="2.08064" stroke-linecap="round" stroke-linejoin="round" />
+        <path opacity="0.34" d="M20.3859 8.09163H20.3993" stroke="currentColor" stroke-width="2.77419"
+              stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+    <symbol id="close-circle" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+                d="M10.0003 18.3333C14.5837 18.3333 18.3337 14.5833 18.3337 9.99999C18.3337 5.41666 14.5837 1.66666 10.0003 1.66666C5.41699 1.66666 1.66699 5.41666 1.66699 9.99999C1.66699 14.5833 5.41699 18.3333 10.0003 18.3333Z"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <g opacity="0.4">
+            <path d="M7.6416 12.3583L12.3583 7.6416" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+            <path d="M12.3583 12.3583L7.6416 7.6416" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+        </g>
+    </symbol>
+    <symbol id="arrow-up" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16.6004 12.5417L11.1671 7.10833C10.5254 6.46666 9.47539 6.46666 8.83372 7.10833L3.40039 12.5417"
+              stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+              stroke-linejoin="round" />
+    </symbol>
+    <symbol id="arrow-circle-down" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12.6248 22.4391C7.10583 22.2318 2.79982 17.5899 3.00704 12.0709C3.21426 6.55194 7.85625 2.24593 13.3752 2.45315C18.8942 2.66037 23.2002 7.30236 22.993 12.8213C22.7857 18.3403 18.1437 22.6463 12.6248 22.4391Z" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+        <path opacity="0.4" d="M16.5742 11.3194L12.9146 14.7045L9.51919 11.0545" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+</svg>
+<!--start menu-->
+<section class="h-31.5 bg-linear-to-b z-50 from-black to-transparent hidden xl:flex items-end absolute w-full">
+
+    <div class="Container flex justify-between items-end relative border-b py-7.5 border-neutral-500">
+
+        <nav>
+            <ul class="flex gap-x-5">
+                <li>
+                    <a href="" class="text-xl text-white hover:text-orange-500 flex items-center gap-1 cursor-pointer active relative">
+                        <svg class="w-7 h-7">
+                            <use href="#home"></use>
+                        </svg>
+                        <span>صفحه اصلی</span>
+                    </a>
+                </li>
+
+                <li class="relative group">
+                    <a href="" class="text-xl text-white hover:text-orange-500 flex items-center gap-1 cursor-pointer relative">
+                        <svg class="w-7 h-7">
+                            <use href="#building"></use>
+                        </svg>
+                        <span>فروشگاه</span>
+                    </a>
+
+                    <!-- start sub menu  -->
+                    <div class="opacity-0 invisible group-hover:opacity-100 group-hover:visible absolute top-full transition-all delay-200">
+                        <ul class="bg-white translate-y-10 w-67 px-4 py-2.5 rounded-2xl child:text-lg child:py-1.25 divide-y divide-neutral-100 dark:bg-neutral-800 dark:text-white">
+                            <li>
+                                <a href="" class="gap-x-1.5 flex items-center h-10.75 rounded-xl
+                                    hover:text-orange-500 hover:bg-orange-50 dark:hover:bg-neutral-700 px-1.25 transition-colors">
+                                    <svg class="size-5.5">
+                                        <use href="#element-equal"></use>
+                                    </svg>
+                                    <span>کفش های زنانه</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="gap-x-1.5 flex items-center h-10.75 rounded-xl
+                                    hover:text-orange-500 hover:bg-orange-50 dark:hover:bg-neutral-700 px-1.25 transition-colors">
+                                    <svg class="size-5.5">
+                                        <use href="#element-equal"></use>
+                                    </svg>
+                                    <span>کفش های مردانه</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="gap-x-1.5 flex items-center h-10.75 rounded-xl
+                                    hover:text-orange-500 hover:bg-orange-50 dark:hover:bg-neutral-700 px-1.25 transition-colors">
+                                    <svg class="size-5.5">
+                                        <use href="#element-equal"></use>
+                                    </svg>
+                                    <span>کیف های زنانه</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="gap-x-1.5 flex items-center h-10.75 rounded-xl
+                                    hover:text-orange-500 hover:bg-orange-50 dark:hover:bg-neutral-700 px-1.25 transition-colors">
+                                    <svg class="size-5.5">
+                                        <use href="#element-equal"></use>
+                                    </svg>
+                                    <span>کیف های مردانه</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- end sub menu  -->
+
+                </li>
+
+                <li>
+                    <a href="" class="text-xl text-white hover:text-orange-500 flex items-center gap-1 cursor-pointer relative">
+                        <svg class="w-7 h-7">
+                            <use href="#people"></use>
+                        </svg>
+                        <span>ارتباط با ما</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="" class="text-xl text-white hover:text-orange-500 flex items-center gap-1 cursor-pointer relative">
+                        <svg class="w-7 h-7">
+                            <use href="#call"></use>
+                        </svg>
+                        <span>تماس با ما</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="w-53.5 h-11 absolute right-0 left-0 mx-auto">
+            <img src="images/Group 1.svg" alt="">
+        </div>
+
+        <div class="flex gap-x-2.5">
+            <button id="toggleThemeBtn" class="border border-neutral-500 rounded-2xl p-2.5 text-white hover:text-orange-500 hover:border-orange-500 cursor-pointer">
+                <svg class="size-7 dark:hidden">
+                    <use href="#sun"></use>
+                </svg>
+                <svg class="size-7 hidden dark:inline-block">
+                    <use href="#moon"></use>
+                </svg>
+            </button>
+
+            <div class="border border-neutral-500 group rounded-2xl p-2.5 text-white hover:text-orange-500 hover:border-orange-500 relative">
+                <svg class="size-7">
+                    <use href="#shopping-cart"></use>
+                </svg>
+
+                <span class="size-5 rounded-full flex items-center justify-center bg-orange-500 text-white absolute right-0 top-0 translate-x-1/2 -translate-y-1/2">2</span>
+
+                <div class="absolute left-0 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all delay-200">
+                    <div class="w-83 bg-white dark:bg-neutral-700 rounded-2xl p-4 mt-10">
+
+                        <!-- start item cart -->
+                        <div class="child:pb-2 child:mb-2 child:border-b child:border-neutral-100 max-h-70 overflow-y-auto">
+
+                            <div class="flex items-center">
+
+                                <div>
+                                    <svg class="text-neutral-500 dark:text-white size-5.5">
+                                        <use href="#close"></use>
+                                    </svg>
+                                </div>
+
+                                <div class="w-25 shrink-0">
+                                    <img src="images/p2.png" alt="product 1">
+                                </div>
+
+                                <div class="text-black dark:text-white text-right grow-1">
+                                    <h6 class="line-clamp-1">کیف کلاسیک مهرخ</h6>
+                                    <div class="text-neutral-500 dark:text-white">
+                                        <span>1</span>
+                                        <span>عدد</span>
+                                    </div>
+                                    <div class="text-left text-neutral-500 dark:text-white">
+                                        <span class="font-sahel-semibold">415,000</span>
+                                        <span>تومان</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center">
+
+                                <div>
+                                    <svg class="text-neutral-500 dark:text-white size-5.5">
+                                        <use href="#close"></use>
+                                    </svg>
+                                </div>
+
+                                <div class="w-25 shrink-0">
+                                    <img src="images/p9.png" alt="product 2">
+                                </div>
+
+                                <div class="text-black dark:text-white text-right grow-1">
+                                    <h6 class="line-clamp-1">کفش مجلسی لاله کفش مجلسی لاله</h6>
+                                    <div class="text-neutral-500 dark:text-white">
+                                        <span>1</span>
+                                        <span>عدد</span>
+                                    </div>
+                                    <div class="text-left text-neutral-500 dark:text-white">
+                                        <span class="font-sahel-semibold">715,000</span>
+                                        <span>تومان</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- end item cart -->
+
+                        <!-- start detail shopping-cart -->
+                        <div>
+                            <div class="text-black flex items-center justify-between dark:text-white">
+                                <span>جمع کل</span>
+                                <div>
+                                    <span class="font-sahel-semibold text-xl">1,215,000</span>
+                                    <span>تومان</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end detail shopping-cart -->
+
+                        <div class="flex justify-between mt-4">
+                            <a href="" class="text-white bg_gradient_orange_main h-9.75 w-36.5 flex items-center justify-center rounded-xl text-lg">تائید و پرداخت</a>
+                            <a href="" class="text-orange-500 border border-orange-500 h-9.75 w-36.5 flex items-center justify-center rounded-xl text-lg">سبد خرید</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <button class="border border-orange-500 rounded-2xl p-2.5 flex text-orange-500 cursor-pointer bg_gradient_orange hover:text-white">
+                <svg class="size-7">
+                    <use href="#profile-tick"></use>
+                </svg>
+                <span>ورود و ثبت نام</span>
+            </button>
+        </div>
+
+    </div>
+
+</section>
+<!--end menu-->
+
+<header class="relative bg-[url(../images/image.png)] h-230 bg-center bg-cover flex items-center">
+    <div class="Container mb-22">
+        <div class="text-white">
+            <p class="text-5xl font-sahel-bold ">تجربه راحت ترین خرید با کویک شاپ</p>
+            <p class="text-[26px] leading-[50px] mt-4 w-198.5 font-sahel-light">با هر
+                سلیقه ای میتونی از کویک شاپ خرید کنی! تنوع بالای کیف و کفش مردانه و زنانه و ارسال رایگان خرید رو
+                برات آسون تر می کنه!</p>
+        </div>
+
+    </div>
+    <svg class="w-full text-white dark:text-neutral-800 absolute bottom-0 translate-y-3 lg:translate-y-5"
+         viewBox="0 0 1920 194" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <mask id="mask0_241_2119" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-5" y="0" width="1928"
+              height="194">
+            <path
+                    d="M-0.434204 60.9999C-0.434204 60.9999 404.126 141.465 953.077 141.465C1502.03 141.465 1918.57 60.9999 1918.57 60.9999V194H-0.434204V60.9999Z"
+                    fill="currentColor" />
+            <path
+                    d="M-1.43665 0.897095C-1.43665 0.897095 401.883 92.4746 952.077 107.3C1502.27 122.126 1921.91 52.7234 1921.91 52.7234L1918.34 186.032L-4.99997 134.206L-1.43665 0.897095Z"
+                    fill="currentColor" fill-opacity="0.6" />
+            <path
+                    d="M-2.70947 29.1759C-2.70947 29.1759 402.011 115.744 952.757 123.745C1503.5 131.746 1922.57 57.1448 1922.57 57.1448L1920.64 190.487L-4.63103 162.518L-2.70947 29.1759Z"
+                    fill="currentColor" fill-opacity="0.6" />
+        </mask>
+        <g mask="url(#mask0_241_2119)">
+            <rect x="-0.434326" y="-3.00003" width="1920" height="179" fill="currentColor" />
+        </g>
+    </svg>
+</header>
+
+<script src="js/app.js"></script>
+
 </body>
 </html>
