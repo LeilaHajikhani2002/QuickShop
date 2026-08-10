@@ -15,6 +15,7 @@
 </script>
 </head>
 <body class="font-sahel dark:bg-neutral-800 h-1000">
+
     <svg class="hidden">
     <symbol id="home" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -298,11 +299,11 @@
 
 </svg>
 <!--start menu-->
-<section class="h-31.5 bg-linear-to-b z-50 from-black to-transparent hidden xl:flex items-end absolute w-full">
+<section class="h-16 md:h-26 xl:h-31.5 bg-linear-to-b z-50 from-black to-transparent items-end absolute w-full">
 
-    <div class="Container flex justify-between items-end relative border-b py-7.5 border-neutral-500">
+    <div class="Container flex justify-between items-center xl:items-end relative border-b py-3.5 md:py-5.5 xl:py-7.5 border-neutral-500">
 
-        <nav>
+        <nav class="hidden xl:flex ">
             <ul class="flex gap-x-5">
                 <li>
                     <a href="" class="text-xl text-white hover:text-orange-500 flex items-center gap-1 cursor-pointer active relative">
@@ -386,26 +387,34 @@
             </ul>
         </nav>
 
-        <div class="w-53.5 h-11 absolute right-0 left-0 mx-auto">
+        <div class="xl:hidden">
+            <svg class="text-white size-6 md:size-9">
+                <use href="#burger"></use>
+            </svg>
+        </div>
+
+
+        <div class="w-40 h-8 md:w-52.5 md:h-10.5 xl:w-53.5 xl:h-11 absolute right-10 md:right-14 xl:right-0 xl:left-0 xl:mx-auto">
             <img src="images/Group 1.svg" alt="">
         </div>
 
         <div class="flex gap-x-2.5">
-            <button id="toggleThemeBtn" class="border border-neutral-500 rounded-2xl p-2.5 text-white hover:text-orange-500 hover:border-orange-500 cursor-pointer">
-                <svg class="size-7 dark:hidden">
+            <button id="toggleThemeBtn" class="border border-neutral-500 flex justify-center items-center rounded-xl xl:rounded-2xl size-8 md:size-12 xl:p-2.5 text-white hover:text-orange-500 hover:border-orange-500 cursor-pointer">
+                <svg class="size-5 md:size-6 xl:size-7 dark:hidden">
                     <use href="#sun"></use>
                 </svg>
-                <svg class="size-7 hidden dark:inline-block">
+                <svg class="size-5 md:size-6 xl:size-7 hidden dark:inline-block">
                     <use href="#moon"></use>
                 </svg>
             </button>
 
-            <div class="border border-neutral-500 group rounded-2xl p-2.5 text-white hover:text-orange-500 hover:border-orange-500 relative">
-                <svg class="size-7">
+            <div class="border border-neutral-500 group flex justify-center items-center rounded-xl md:rounded-2xl size-8 md:size-12 xl:p-2.5 text-white hover:text-orange-500 hover:border-orange-500 relative">
+                <svg class="size-5 md:size-6 xl:size-7">
                     <use href="#shopping-cart"></use>
                 </svg>
 
-                <span class="size-5 rounded-full flex items-center justify-center bg-orange-500 text-white absolute right-0 top-0 translate-x-1/2 -translate-y-1/2">2</span>
+                <span class="size-4 xl:size-5 text-xs xl:text-x
+                l rounded-full flex items-center justify-center bg-orange-500 text-white absolute right-0 top-0 translate-x-1/2 -translate-y-1/2">2</span>
 
                 <div class="absolute left-0 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all delay-200">
                     <div class="w-83 bg-white dark:bg-neutral-700 rounded-2xl p-4 mt-10">
@@ -487,11 +496,11 @@
                 </div>
             </div>
 
-            <button class="border border-orange-500 rounded-2xl p-2.5 flex text-orange-500 cursor-pointer bg_gradient_orange hover:text-white">
-                <svg class="size-7">
+            <button class="border border-orange-500 flex justify-center items-center rounded-xl md:rounded-2xl size-8 md:size-auto xl:p-2.5 text-orange-500 cursor-pointer bg_gradient_orange hover:text-white">
+                <svg class="size-5 md:size-6 xl:size-7">
                     <use href="#profile-tick"></use>
                 </svg>
-                <span>ورود و ثبت نام</span>
+                <span class="hidden md:inline-block">ورود و ثبت نام</span>
             </button>
         </div>
 
@@ -500,11 +509,11 @@
 </section>
 <!--end menu-->
 
-<header class="relative bg-[url(../images/image.png)] h-230 bg-center bg-cover flex items-center">
+<header class="relative bg-[url(../images/header-mobile3.jpg)] xl:bg-[url(../images/image.png)] h-118 md:h-150 xl:h-230 bg-bottom xl:bg-center bg-cover flex items-center">
     <div class="Container mb-22">
         <div class="text-white">
-            <p class="text-5xl font-sahel-bold ">تجربه راحت ترین خرید با کویک شاپ</p>
-            <p class="text-[26px] leading-[50px] mt-4 w-198.5 font-sahel-light">با هر
+            <p class="text-[22px] md: text-2xl lg:text-4xl font-sahel-bold">تجربه راحت ترین خرید با کویک شاپ</p>
+            <p class="text-base md:text-xl lg:text-2xl lg:leading-12.5 mt-4 lg:w-198.5 font-sahel-light">با هر
                 سلیقه ای میتونی از کویک شاپ خرید کنی! تنوع بالای کیف و کفش مردانه و زنانه و ارسال رایگان خرید رو
                 برات آسون تر می کنه!</p>
         </div>
@@ -529,6 +538,55 @@
         </g>
     </svg>
 </header>
+
+
+    <!--start services-->
+    <section>
+        <div class="Container my-13.5">
+            <div class="overflow-x-auto">
+                <div class="flex justify-between space-x-2.5 min-w-max">
+
+                    <div class="w-37.5 h-35 md:w-47.5 md:h-46 lg:w-58.75 lg:h-54.25 flex items-center justify-center flex-col text-center">
+                        <img src="images/services1.png" alt="" class="w-14.25 h-15 md:w-17.5 md:h-18 lg:w-22 lg:h-23.5">
+                        <span class="mt-3 mb-1.5 lg:mt-5 lg:mb-2 text-sm md:text-lg lg:text-xl font-sahel-semibold text-black">تنوع بالا محصولات</span>
+                        <p class="text-xs md:text-sm lg:text-xl text-neutral-500 line-clamp-2">بالاترین تنوع با هرگونه جنس و برند داخلی و خارجی</p>
+                    </div>
+
+                    <div class="w-37.5 h-35 md:w-47.5 md:h-46 lg:w-58.75 lg:h-54.25 flex items-center justify-center flex-col text-center 2xl:mt-13.25">
+                        <img src="images/services2.png" alt="" class="w-14.25 h-15 md:w-17.5 md:h-18 lg:w-22 lg:h-23.5">
+                        <span class="mt-3 mb-1.5 lg:mt-5 lg:mb-2 text-sm md:text-lg lg:text-xl font-sahel-semibold text-black">تضمین قیمت</span>
+                        <p class="text-xs md:text-sm lg:text-xl text-neutral-500 line-clamp-2">تضمین قیمت مناسب تمامی محصولات کیف و کفش</p>
+                    </div>
+
+                    <div class="w-37.5 h-35 md:w-47.5 md:h-46 lg:w-58.75 lg:h-54.25 flex items-center justify-center flex-col text-center 2xl:mt-24.5">
+                        <img src="images/services3.png" alt="" class="w-14.25 h-15 md:w-17.5 md:h-18 lg:w-22 lg:h-23.5">
+                        <span class="mt-3 mb-1.5 lg:mt-5 lg:mb-2 text-sm md:text-lg lg:text-xl font-sahel-semibold text-black">ارسال مستقیم از تولیدی</span>
+                        <p class="text-xs md:text-sm lg:text-xl text-neutral-500 line-clamp-2"> ارسال مستقیم از تولیدی، وارد کننده مستقیم کیف و کفش</p>
+                    </div>
+
+                    <div class="w-37.5 h-35 md:w-47.5 md:h-46 lg:w-58.75 lg:h-54.25 flex items-center justify-center flex-col text-center 2xl:mt-24.5">
+                        <img src="images/services4.png" alt="" class="w-14.25 h-15 md:w-17.5 md:h-18 lg:w-22 lg:h-23.5">
+                        <span class="mt-3 mb-1.5 lg:mt-5 lg:mb-2 text-sm md:text-lg lg:text-xl font-sahel-semibold text-black">امکان تعویض سایز</span>
+                        <p class="text-xs md:text-sm lg:text-xl text-neutral-500 line-clamp-2">تعویض محصول در صورت انتخاب و ارسال اشتباه سایز</p>
+                    </div>
+
+                    <div class="w-37.5 h-35 md:w-47.5 md:h-46 lg:w-58.75 lg:h-54.25 flex items-center justify-center flex-col text-center 2xl:mt-13.25">
+                        <img src="images/services5.png" alt="" class="w-14.25 h-15 md:w-17.5 md:h-18 lg:w-22 lg:h-23.5">
+                        <span class="mt-3 mb-1.5 lg:mt-5 lg:mb-2 text-sm md:text-lg lg:text-xl font-sahel-semibold text-black"> ارسال رایگان پستی</span>
+                        <p class="text-xs md:text-sm lg:text-xl text-neutral-500 line-clamp-2">ارسال رایگان پستی به سراسر کشور ایران</p>
+                    </div>
+
+                    <div class="w-37.5 h-35 md:w-47.5 md:h-46 lg:w-58.75 lg:h-54.25 flex items-center justify-center flex-col  text-center">
+                        <img src="images/services6.png" alt="" class="w-14.25 h-15 md:w-17.5 md:h-18 lg:w-22 lg:h-23.5">
+                        <span class="mt-3 mb-1.5 lg:mt-5 lg:mb-2 text-sm md:text-lg lg:text-xl font-sahel-semibold text-black">پشتیبانی قوی</span>
+                        <p class="text-xs md:text-sm lg:text-xl text-neutral-500 line-clamp-2"> پشتیبانی قوی و پاسخگویی سریع 24 ساعته در 7 روز هفته</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!--end services-->
 
 <script src="js/app.js"></script>
 
