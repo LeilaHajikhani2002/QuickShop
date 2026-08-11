@@ -1,33 +1,44 @@
-# Template Project
+🌐 Frontend Project
 
-This is a frontend template project built using HTML, CSS, Tailwind npm libraries.
+A responsive and modern frontend project built with HTML, CSS, Tailwind CSS, and keen slider.
 
----
+✨ Features
 
-## 🚀 Features
+- 📱 Fully responsive design
+- 🎨 Modern UI built with Tailwind CSS
+- 🧩 Custom CSS styling
+- 🖼️ Interactive sliders and carousels using keen slider
+- ⚡️ Fast and lightweight frontend
+- 📐 Mobile-first design
 
-- Responsive layout
+🛠️ Technologies
 
----
+- HTML5 — Page structure and semantic markup
+- CSS3 — Custom styling
+- Tailwind CSS — Utility-first CSS framework
+- keen slider — Responsive sliders and carousels
+- NPM — Package management
 
-## 📦 Libraries Used (npm)
+📦 Installation
 
-- Tailwind
+Clone the repository:
 
----
+git clone https://github.com/LeilaHajikhani2002/QuickShop.git
 
-## 📁 Project Structure
+Navigate to the project directory:
 
-- css/ → compiled CSS files
-- html/ → HTML pages
-- images/ → image assets
-- node_modules/ → installed dependencies
+cd project-name
 
----
+Install the dependencies:
 
-## ⚙️ Installation
-
-After cloning the project, run:
-
-`bash
 npm install
+
+🚀 Run the Project
+
+Start Tailwind CSS in watch mode:
+
+npm run build
+
+Tailwind CSS will watch for changes in your files and automatically update the generated CSS.
+
+Then open "index.html" in your browser.

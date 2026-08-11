@@ -53,5 +53,4 @@
         @apply content-[''] w-full h-1 bg-linear-to-r from-[#FF8904] to-[#FF6900] absolute -bottom-7.5 translate-y-0.5 rounded-full;
 
     }
-
 }
