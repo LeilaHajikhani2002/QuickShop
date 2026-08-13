@@ -8,6 +8,11 @@
     --font-sahel-semibold: "sahel semiBold";
     --font-sahel-bold: "sahel bold";
 }
+@layer components{
+    .mobile-sub-menu{
+        @apply ms-5 bg-neutral-50 px-4 py-2.5 mt-3 rounded-2xl child:text-lg child:py-1.25 divide-y divide-white dark:divide-neutral-500 dark:bg-neutral-700 dark:text-white
+    }
+}
 
 
 @layer base {

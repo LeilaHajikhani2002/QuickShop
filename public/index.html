@@ -296,7 +296,7 @@
 </svg>
 
 <!--start menu-->
-<section class="h-16 md:h-26 xl:h-31.5 bg-linear-to-b z-50 from-black to-transparent items-end absolute w-full">
+<section class="h-16 md:h-26 xl:h-31.5 bg-linear-to-b z-50 from-black to-transparent items-end fixed top-0 backdrop-blur-xs w-full">
 
     <div class="Container flex justify-between items-center xl:items-end relative border-b py-3.5 md:py-5.5 xl:py-7.5 border-neutral-500">
 
@@ -385,7 +385,7 @@
         </nav>
 
         <div class="xl:hidden">
-            <svg class="text-white size-6 md:size-9">
+            <svg class="text-white size-6 md:size-9 burger-btn">
                 <use href="#burger"></use>
             </svg>
         </div>
@@ -506,6 +506,116 @@
 </section>
 <!--end menu-->
 
+<!--start mobile nav-->
+<div class="mobile-nav overflow-y-auto bg-white dark:bg-neutral-800 min-h-screen fixed top-0 bottom-0 -right-80 w-80 z-50 p-5 transition-all">
+    <div class="flex items-center justify-between border-b border-b-neutral-100 pb-4">
+        <img src="images/Group%2013.png" alt="" class="w-38.5 h-8.5 block dark:hidden">
+        <img src="images/Group%2013%20_dark.png" alt="" class="w-38.5 h-8.5 hidden dark:block">
+        <span>
+            <svg class="size-5 text-neutral-500 dark:text-neutral-50 close-btn">
+                <use href="#close-circle"></use>
+            </svg>
+        </span>
+    </div>
+
+    <ul class="divide-y divide-neutral-100 flex flex-col dark:text-white">
+        <li class="py-4">
+            <a href="" class="inline-flex items-center gap-x-1.5">
+                <svg class="size-5">
+                    <use href="#home"></use>
+                </svg>
+                <span class="text-base">صفحه اصلی</span>
+            </a>
+        </li>
+
+        <li class="py-4 w-full">
+            <div class="flex justify-between">
+                <a href="" class="flex items-center gap-x-1.5">
+                    <svg class="size-5">
+                        <use href="#building"></use>
+                    </svg>
+                    <span class="text-base">فروشگاه</span>
+                </a>
+                <button class="open-sub-menu-btn rotate-180">
+                    <svg class="size-5">
+                        <use href="#arrow-up"></use>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- start sub menu  -->
+            <ul class="mobile-sub-menu hidden">
+                <li>
+                    <a href="" class="gap-x-1.5 flex items-center h-10.75 rounded-xl dark:hover:bg-neutral-700 px-1.25 transition-colors">
+                        <svg class="size-4">
+                            <use href="#element-equal"></use>
+                        </svg>
+                        <span class="text-sm">کفش های زنانه</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="gap-x-1.5 flex items-center h-10.75 rounded-xl dark:hover:bg-neutral-700 px-1.25 transition-colors">
+                        <svg class="size-4">
+                            <use href="#element-equal"></use>
+                        </svg>
+                        <span class="text-sm">کفش های مردانه</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="gap-x-1.5 flex items-center h-10.75 rounded-xl dark:hover:bg-neutral-700 px-1.25 transition-colors">
+                        <svg class="size-4">
+                            <use href="#element-equal"></use>
+                        </svg>
+                        <span class="text-sm">کیف های زنانه</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="gap-x-1.5 flex items-center h-10.75 rounded-xl dark:hover:bg-neutral-700 px-1.25 transition-colors">
+                        <svg class="size-4">
+                            <use href="#element-equal"></use>
+                        </svg>
+                        <span class="text-sm">کیف های مردانه</span>
+                    </a>
+                </li>
+            </ul>
+            <!-- end sub menu  -->
+        </li>
+
+        <li class="py-4">
+            <a href="" class="inline-flex items-center gap-x-1.5">
+                <svg class="size-5">
+                    <use href="#people"></use>
+                </svg>
+                <span class="text-base">درباره ما</span>
+            </a>
+        </li>
+
+        <li class="py-4">
+            <a href="" class="inline-flex items-center gap-x-1.5">
+                <svg class="size-5">
+                    <use href="#call"></use>
+                </svg>
+                <span class="text-base">تماس با ما</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<!--end mobile nav-->
+
+<!--start mobile shopping card-->
+<div class="bg-white w-87 h-92 pb-7 pt-10 px-4 fixed bottom-0 z-50 left-1/2 -translate-x-1/2 rounded-t-2xl">
+    <div class="size-12 bg-white absolute top-0 left-1/2 rounded-full -translate-1/2 flex justify-center items-center">
+        <svg class="size-6">
+            <use href="#arrow-circle-down"></use>
+        </svg>
+    </div>
+
+</div>
+<!--end mobile shopping card-->
+
+
+
+<!--start header-->
 <header class="relative bg-[url(../images/header-mobile3.jpg)] xl:bg-[url(../images/image.png)] h-118 md:h-150 xl:h-230 bg-bottom xl:bg-center bg-cover flex items-center">
 
     <div class="Container mb-22">
@@ -535,6 +645,7 @@
         </g>
     </svg>
 </header>
+<!--end header-->
 
 <!--start services-->
 <section class="py-14">
@@ -874,7 +985,7 @@
 <!--end top product-->
 
 <!--start offer-->
-<section class="pt-35">
+<section class="pt-11">
     <div class="Container">
         <!-- section head -->
         <div class="section-head flex justify-between dark:text-white">
@@ -887,12 +998,12 @@
                     <!-- left and right control  -->
                     <div class="flex gap-x-3 lg:gap-x-4 2xl:gap-x-5">
                         <div class="swiper-button-prev-custom">
-                            <svg class="bg-orange-500 cursor-pointer size-8 rounded-lg lg:px-1 text-white dark:text-black">
+                            <svg class="bg-orange-500 cursor-pointer size-4 lg:size-6 2xl:size-8 rounded-sm 2xl:rounded-lg lg:px-1 text-white dark:text-black">
                                 <use href="#right"></use>
                             </svg>
                         </div>
                         <div class="swiper-button-next-custom">
-                            <svg class="bg-orange-500 cursor-pointer size-8 rounded-lg lg:px-1 text-white dark:text-black">
+                            <svg class="bg-orange-500 cursor-pointer size-4 lg:size-6 2xl:size-8 rounded-sm 2xl:rounded-lg lg:px-1 text-white dark:text-black">
                                 <use href="#left"></use>
                             </svg>
                         </div>
@@ -1087,11 +1198,11 @@
                 <div class="bg_gradient_orange_main rounded-3xl h-27 sm:h-40 lg:h-50 2xl:h-64 relative w-full px-7">
                     <img src="images/pattern.png" alt="" class="absolute right-0 rounded-3xl">
                     <img src="images/svg-banner.png" alt="" class="absolute -bottom-1 left-0 h-10 sm:h-18 xl:h-24 2xl:h-auto">
-                    <img src="images/man.png" alt="" class="z-40 absolute left-0 bottom-0 w-38 sm:w-57 xl:w-76 2xl:w-110 h-24 sm:h-34 lg:h-53 2xl:h-80">
+                    <img src="images/man.png" alt="" class="z-10 absolute left-0 bottom-0 w-38 sm:w-57 xl:w-76 2xl:w-110 h-24 sm:h-34 lg:h-53 2xl:h-80">
 
-                    <div class="flex flex-col justify-center items-start h-full text-white z-50">
+                    <div class="flex flex-col justify-center items-start h-full text-white z-20">
                         <h4 class="font-sahel-bold text-base sm:text-lg lg:text-xl 2xl:text-2xl">کیف و کفش مردانه</h4>
-                        <p class="py-1 lg:py-3 text-xs sm:text-sm lg:text-base 2xl:text-lg w-[65%] 2xl:w-[50%] z-50">تنوع بالای کیف و کفش در طرح و رنگ و برند های داخلی و خارجی با ارسال رایگان!</p>
+                        <p class="py-1 lg:py-3 text-xs sm:text-sm lg:text-base 2xl:text-lg w-[65%] 2xl:w-[50%] z-20">تنوع بالای کیف و کفش در طرح و رنگ و برند های داخلی و خارجی با ارسال رایگان!</p>
                         <a href="" class="text-xs sm:text-sm lg:text-md 2xl:text-xl flex items-center gap-x-1 mt-2 lg:mt-4 border border-transparent hover:border-white p-1.5 lg:p-2 rounded-2xl transition-all">
                             مشاهده همه
                             <span>
@@ -1109,11 +1220,11 @@
                 <div class="bg_gradient_orange_main rounded-3xl h-27 sm:h-40 lg:h-50 2xl:h-64 relative w-full px-7">
                     <img src="images/pattern.png" alt="" class="absolute right-0 rounded-3xl">
                     <img src="images/svg-banner.png" alt="" class="absolute -bottom-1 left-0 h-10 sm:h-18 xl:h-24 2xl:h-auto">
-                    <img src="images/woman.png" alt="" class="z-40 absolute left-0 bottom-0 w-38 sm:w-57 xl:w-76 2xl:w-110 h-24 sm:h-34 lg:h-53 2xl:h-80">
+                    <img src="images/woman.png" alt="" class="z-10 absolute left-0 bottom-0 w-38 sm:w-57 xl:w-76 2xl:w-110 h-24 sm:h-34 lg:h-53 2xl:h-80">
 
-                    <div class="flex flex-col justify-center items-start h-full text-white z-50">
+                    <div class="flex flex-col justify-center items-start h-full text-white z-20">
                         <h4 class="font-sahel-bold text-base sm:text-lg lg:text-xl 2xl:text-2xl">کیف و کفش زنانه</h4>
-                        <p class="py-1 lg:py-3 text-xs sm:text-sm lg:text-base 2xl:text-lg w-[65%] 2xl:w-[50%] z-50">تنوع بالای کیف و کفش در طرح و رنگ و برند های داخلی و خارجی با ارسال رایگان!</p>
+                        <p class="py-1 lg:py-3 text-xs sm:text-sm lg:text-base 2xl:text-lg w-[65%] 2xl:w-[50%] z-20">تنوع بالای کیف و کفش در طرح و رنگ و برند های داخلی و خارجی با ارسال رایگان!</p>
                         <a href="" class="text-xs sm:text-sm lg:text-md 2xl:text-xl flex items-center gap-x-1 mt-2 lg:mt-4 border border-transparent hover:border-white p-1.5 lg:p-2 rounded-2xl transition-all">
                             مشاهده همه
                             <span>
@@ -1143,13 +1254,13 @@
                 <div class="flex items-center gap-x-4 lg:gap-x-5 2xl:gap-x-7">
                     <!-- left and right control  -->
                     <div class="flex gap-x-3 lg:gap-x-4 2xl:gap-x-5">
-                        <div class="swiper-button-prev-custom">
-                            <svg class="bg-orange-500 cursor-pointer size-8 rounded-lg lg:px-1 text-white dark:text-black">
+                        <div class="swiper-button-prev-custom-readings">
+                            <svg class="bg-orange-500 cursor-pointer  size-4 lg:size-6 2xl:size-8 rounded-sm 2xl:rounded-lg lg:px-1 text-white dark:text-black">
                                 <use href="#right"></use>
                             </svg>
                         </div>
-                        <div class="swiper-button-next-custom">
-                            <svg class="bg-orange-500 cursor-pointer size-8 rounded-lg lg:px-1 text-white dark:text-black">
+                        <div class="swiper-button-next-custom-readings">
+                            <svg class="bg-orange-500 cursor-pointer  size-4 lg:size-6 2xl:size-8 rounded-sm 2xl:rounded-lg lg:px-1 text-white dark:text-black">
                                 <use href="#left"></use>
                             </svg>
                         </div>
@@ -1166,9 +1277,237 @@
                 </div>
             </div>
         </div>
+
+        <!-- section body  -->
+        <div class="bg-neutral-50 py-4 px-2 lg:py-5 lg:px-4 2xl:p-7 mt-3 lg:mt-4 2xl:mt-6 mb-10 dark:bg-neutral-700 rounded-lg lg:rounded-xl 2xl:rounded-2xl">
+            <!-- reading slider-->
+            <div class="swiper swiperReading">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                       <div class="bg-white p-2 lg:p-3.5 2xl:p-5 rounded-lg lg:rounded-xl 2xl:rounded-2xl border border-transparent hover:border-orange-500 transition-all dark:bg-neutral-800">
+                           <div>
+                               <img src="images/a1.png" alt="" class="rounded-lg lg:rounded-xl 2xl:rounded-2xl">
+                           </div>
+                           <h3 class="line-clamp-2 h-10 lg:h-14 2xl:h-17 text-sm lg:text-lg 2xl:text-xl font-sahel-semibold mt-6 dark:text-white">7 ترفند ساده تنگ کردن کفش گشاد در منزل</h3>
+                           <div class="mt-2 lg:mt-3 2xl:mt-5 text-xs lg:text-sm 2xl:text-base text-neutral-500 flex items-center gap-x-1 dark:text-neutral-50">
+                               <svg class="size-5.5">
+                                   <use href="#calendar"></use>
+                               </svg>
+                               <span>12 اردیبهشت 1404</span>
+                           </div>
+
+                       </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="bg-white p-2 lg:p-3.5 2xl:p-5 rounded-lg lg:rounded-xl 2xl:rounded-2xl border border-transparent hover:border-orange-500 transition-all dark:bg-neutral-800">
+                            <div>
+                                <img src="images/a2.png" alt="" class="rounded-lg lg:rounded-xl 2xl:rounded-2xl">
+                            </div>
+                            <h3 class="line-clamp-2 h-10 lg:h-14 2xl:h-17 text-sm lg:text-lg 2xl:text-xl font-sahel-semibold mt-6 dark:text-white">7 معرفی کیف های ترند سال 1404</h3>
+                            <div class="mt-2 lg:mt-3 2xl:mt-5 text-xs lg:text-sm 2xl:text-base text-neutral-500 flex items-center gap-x-1 dark:text-neutral-50">
+                                <svg class="size-5.5">
+                                    <use href="#calendar"></use>
+                                </svg>
+                                <span>12 اردیبهشت 1404</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="bg-white p-2 lg:p-3.5 2xl:p-5 rounded-lg lg:rounded-xl 2xl:rounded-2xl border border-transparent hover:border-orange-500 transition-all dark:bg-neutral-800">
+                            <div>
+                                <img src="images/a3.png" alt="" class="rounded-lg lg:rounded-xl 2xl:rounded-2xl">
+                            </div>
+                            <h3 class="line-clamp-2 h-10 lg:h-14 2xl:h-17 text-sm lg:text-lg 2xl:text-xl font-sahel-semibold mt-6 dark:text-white"> جدیدترین ترندهای مد و پوشاک زنانه</h3>
+                            <div class="mt-2 lg:mt-3 2xl:mt-5 text-xs lg:text-sm 2xl:text-base text-neutral-500 flex items-center gap-x-1 dark:text-neutral-50">
+                                <svg class="size-5.5">
+                                    <use href="#calendar"></use>
+                                </svg>
+                                <span>12 اردیبهشت 1404</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="bg-white p-2 lg:p-3.5 2xl:p-5 rounded-lg lg:rounded-xl 2xl:rounded-2xl border border-transparent hover:border-orange-500 transition-all dark:bg-neutral-800">
+                            <div>
+                                <img src="images/a4.png" alt="" class="rounded-lg lg:rounded-xl 2xl:rounded-2xl">
+                            </div>
+                            <h3 class="line-clamp-2 h-10 lg:h-14 2xl:h-17 text-sm lg:text-lg 2xl:text-xl font-sahel-semibold mt-6 dark:text-white">   صندل های مناسب برای بهار و تابستان ۱۴۰۴</h3>
+                            <div class="mt-2 lg:mt-3 2xl:mt-5 text-xs lg:text-sm 2xl:text-base text-neutral-500 flex items-center gap-x-1 dark:text-neutral-50">
+                                <svg class="size-5.5">
+                                    <use href="#calendar"></use>
+                                </svg>
+                                <span>12 اردیبهشت 1404</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="bg-white p-2 lg:p-3.5 2xl:p-5 rounded-lg lg:rounded-xl 2xl:rounded-2xl border border-transparent hover:border-orange-500 transition-all dark:bg-neutral-800">
+                            <div>
+                                <img src="images/a1.png" alt="" class="rounded-lg lg:rounded-xl 2xl:rounded-2xl">
+                            </div>
+                            <h3 class="line-clamp-2 h-10 lg:h-14 2xl:h-17 text-sm lg:text-lg 2xl:text-xl font-sahel-semibold mt-6 dark:text-white">7 ترفند ساده تنگ کردن کفش گشاد در منزل</h3>
+                            <div class="mt-2 lg:mt-3 2xl:mt-5 text-xs lg:text-sm 2xl:text-base text-neutral-500 flex items-center gap-x-1 dark:text-neutral-50">
+                                <svg class="size-5.5">
+                                    <use href="#calendar"></use>
+                                </svg>
+                                <span>12 اردیبهشت 1404</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 <!-- end readings  -->
+
+<!-- start footer  -->
+<footer>
+    <div class="Container">
+        <div class="rounded-2xl bg-neutral-700 p-7 flex flex-wrap justify-between gap-x-8 gap-y-9">
+            <!-- column 1 -->
+            <div class="grow-1 hidden 2xl:flex justify-center items-center">
+                <a href="">
+                    <img src="images/footer_logo.svg" alt="" class="w-45 h-32">
+                </a>
+            </div>
+            <!-- column 2 -->
+            <div class="grow-1 text-white">
+                <div class=" flex flex-nowrap items-center gap-x-1">
+                    <span class="w-4 h-1 lg:w-6 lg:h-1.5 2xl:w-9 2xl:h-1 bg_gradient_orange_main inline-block"></span>
+                    <span class="text-base lg:text-lg 2xl:text-xl font-sahel-semibold">لینک های اصلی</span>
+                </div>
+
+                <ul class="space-y-4 mt-3 text-sm lg:text-base 2xl:text-lg">
+                    <li>
+                        <a href="" class="py-1">انواع کیف</a>
+                    </li>
+
+                    <li>
+                        <a href="" class="py-1">انواع کفش</a>
+                    </li>
+
+                    <li>
+                        <a href="" class="py-1">پیگیری سفارش</a>
+                    </li>
+
+                    <li>
+                        <a href="" class="py-1">خواندنی ها</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- column 3 -->
+            <div class="grow-1 text-white hidden 2xl:block">
+                <div class=" flex items-center gap-x-1">
+                    <span class="w-4 h-1 lg:w-6 lg:h-1.5 2xl:w-9 2xl:h-1 bg_gradient_orange_main inline-block"></span>
+                    <span class="text-base lg:text-lg 2xl:text-xl font-sahel-semibold">لینک های مفید</span>
+                </div>
+
+                <ul class="space-y-4 mt-3 text-sm lg:text-base 2xl:text-lg">
+                    <li>
+                        <a href="" class="py-1">درباره ما</a>
+                    </li>
+
+                    <li>
+                        <a href="" class="py-1">تماس با ما</a>
+                    </li>
+
+                    <li>
+                        <a href="" class="py-1">سوالات متداول</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- column 4 -->
+            <div class="grow-1 text-white">
+                <div class=" flex items-center gap-x-1">
+                    <span class="w-4 h-1 lg:w-6 lg:h-1.5 2xl:w-9 2xl:h-1 bg_gradient_orange_main inline-block"></span>
+                    <span class="text-base lg:text-lg 2xl:text-xl font-sahel-semibold">راه های ارتباطی</span>
+                </div>
+
+                <ul class="space-y-4 mt-3 text-sm lg:text-base 2xl:text-lg">
+                    <li class="flex gap-x-3.5 py-1 items-center">
+                        <svg class="size-4 lg:size-5 2xl:size-6">
+                            <use href="#calling"></use>
+                        </svg>
+                        <div>
+                            <span>02142142</span>
+                            <span>-</span>
+                            <span>02143564</span>
+                        </div>
+
+                    </li>
+
+                    <li class="flex gap-x-3.5 py-1 items-center">
+                        <svg class="size-4 lg:size-5 2xl:size-6">
+                            <use href="#sms"></use>
+                        </svg>
+                        <span>Quickshop@gmail.com</span>
+                    </li>
+
+                    <li class="flex gap-x-3.5 py-1 items-center">
+                        <svg class="size-4 lg:size-5 2xl:size-6">
+                            <use href="#map"></use>
+                        </svg>
+                        <address class="max-w-60">مشهد، خیابان امام رضا (ع)،بین امام رضا 24 و 26</address>
+
+                    </li>
+                </ul>
+            </div>
+            <!-- column 5 -->
+            <div class="grow-1 h-60 w-100 rounded-2xl overflow-hidden">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7522.517056536151!2d59.222026353359155!3d32.874353923675194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f1a6758eaf42d1b%3A0x687825d4d67b28ca!2z2KjbjNmF2KfYsdiz2KrYp9mGINin2YXYp9mFINix2LbYpw!5e0!3m2!1sfa!2s!4v1752857427840!5m2!1sfa!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+        <div class="py-9 flex text-center justify-center lg:justify-between flex-wrap gap-y-2.5">
+            <p class="text-sm lg:text-base 2xl:text-lg text-neutral-500 dark:text-neutral-50">کلیه حقوق وبسایت و اپلیکیشن موبایل محقوظ و متعلق به فروشگاه آنلاین کویک شاپ می باشد.</p>
+
+            <ul class="flex gap-x-5">
+                <li>
+                    <a href="" class="dark:text-neutral-50">
+                        <svg class="size5 lg:size-6 2xl:size-7">
+                            <use href="#facebook"></use>
+                        </svg>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="" class="dark:text-neutral-50">
+                        <svg class="size5 lg:size-6 2xl:size-7">
+                            <use href="#telegram"></use>
+                        </svg>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="" class="dark:text-neutral-50">
+                        <svg class="size5 lg:size-6 2xl:size-7">
+                            <use href="#instagram"></use>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<!-- end footer  -->
+
+<!-- start black-layer  -->
+<div class="black-layer bg-neutral-700/70 fixed inset-0 z-40 hidden">
+
+</div>
+<!-- end black-layer  -->
 
 
 
