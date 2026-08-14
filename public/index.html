@@ -405,7 +405,7 @@
                 </svg>
             </button>
 
-            <div class="border border-neutral-500 group flex justify-center items-center rounded-xl md:rounded-2xl size-8 md:size-12 xl:p-2.5 text-white hover:text-orange-500 hover:border-orange-500 relative">
+            <div class="shopping-card-btn border border-neutral-500 group flex justify-center items-center rounded-xl md:rounded-2xl size-8 md:size-12 xl:p-2.5 text-white hover:text-orange-500 hover:border-orange-500 relative">
                 <svg class="size-5 md:size-6 xl:size-7">
                     <use href="#shopping-cart"></use>
                 </svg>
@@ -413,7 +413,7 @@
                 <span class="size-4 xl:size-5 text-xs xl:text-x
                 l rounded-full flex items-center justify-center bg-orange-500 text-white absolute right-0 top-0 translate-x-1/2 -translate-y-1/2">2</span>
 
-                <div class="absolute left-0 top-full opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all delay-200">
+                <div class="absolute left-0 top-full opacity-0 invisible xl:group-hover:opacity-100 xl:group-hover:visible transition-all delay-200">
                     <div class="w-83 bg-white dark:bg-neutral-700 rounded-2xl p-4 mt-10">
 
                         <!-- start item cart -->
@@ -437,7 +437,7 @@
                                         <span>1</span>
                                         <span>عدد</span>
                                     </div>
-                                    <div class="text-left text-neutral-500 dark:text-white">
+                                    <div class="text-left text-neutral-500 dark:text-neutral-400">
                                         <span class="font-sahel-semibold">415,000</span>
                                         <span>تومان</span>
                                     </div>
@@ -462,7 +462,7 @@
                                         <span>1</span>
                                         <span>عدد</span>
                                     </div>
-                                    <div class="text-left text-neutral-500 dark:text-white">
+                                    <div class="text-left text-neutral-500 dark:text-neutral-400">
                                         <span class="font-sahel-semibold">715,000</span>
                                         <span>تومان</span>
                                     </div>
@@ -603,11 +603,89 @@
 <!--end mobile nav-->
 
 <!--start mobile shopping card-->
-<div class="bg-white w-87 h-92 pb-7 pt-10 px-4 fixed bottom-0 z-50 left-1/2 -translate-x-1/2 rounded-t-2xl">
-    <div class="size-12 bg-white absolute top-0 left-1/2 rounded-full -translate-1/2 flex justify-center items-center">
+<div class="mobile-shopping-card bg-white dark:bg-neutral-700 w-87 lg:w-120 h-92 lg:h-120 pb-7 pt-10 px-4 fixed -bottom-full z-50 left-1/2 -translate-x-1/2 rounded-t-2xl transition-all">
+
+    <div class="close-shopping-card-btn size-12 bg-white dark:bg-neutral-700 dark:text-white absolute top-0 left-1/2 rounded-full -translate-1/2 flex justify-center items-center">
         <svg class="size-6">
             <use href="#arrow-circle-down"></use>
         </svg>
+    </div>
+
+    <div class=" rounded-2xl h-full flex flex-col justify-between">
+
+        <!-- start item cart -->
+        <div class="child:pb-2 child:mb-2 child:border-b child:border-neutral-100 max-h-70 overflow-y-auto">
+
+            <div class="flex items-center">
+
+                <div>
+                    <svg class="text-neutral-500 dark:text-white size-5.5">
+                        <use href="#close"></use>
+                    </svg>
+                </div>
+
+                <div class="w-25 shrink-0">
+                    <img src="images/p2.png" alt="product 1">
+                </div>
+
+                <div class="text-black dark:text-white text-right grow-1">
+                    <h6 class="line-clamp-1">کیف کلاسیک مهرخ</h6>
+                    <div class="text-neutral-500 dark:text-white">
+                        <span>1</span>
+                        <span>عدد</span>
+                    </div>
+                    <div class="text-left text-neutral-500 dark:text-neutral-400">
+                        <span class="font-sahel-semibold">415,000</span>
+                        <span>تومان</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center">
+
+                <div>
+                    <svg class="text-neutral-500 dark:text-white size-5.5">
+                        <use href="#close"></use>
+                    </svg>
+                </div>
+
+                <div class="w-25 shrink-0">
+                    <img src="images/p9.png" alt="product 2">
+                </div>
+
+                <div class="text-black dark:text-white text-right grow-1">
+                    <h6 class="line-clamp-1">کفش مجلسی لاله کفش مجلسی لاله</h6>
+                    <div class="text-neutral-500 dark:text-white">
+                        <span>1</span>
+                        <span>عدد</span>
+                    </div>
+                    <div class="text-left text-neutral-500 dark:text-neutral-400">
+                        <span class="font-sahel-semibold">715,000</span>
+                        <span>تومان</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- end item cart -->
+
+        <!-- start detail shopping-cart -->
+        <div>
+            <div class="text-black flex items-center justify-between dark:text-neutral-100">
+                <span>جمع کل</span>
+                <div>
+                    <span class="font-sahel-semibold text-xl">1,215,000</span>
+                    <span>تومان</span>
+                </div>
+            </div>
+        </div>
+        <!-- end detail shopping-cart -->
+
+        <div class="flex justify-between mt-4">
+            <a href="" class="text-white bg_gradient_orange_main h-9.75 w-36.5 flex items-center justify-center rounded-xl text-lg">تائید و پرداخت</a>
+            <a href="" class="text-orange-500 border border-orange-500 h-9.75 w-36.5 flex items-center justify-center rounded-xl text-lg">سبد خرید</a>
+        </div>
+
     </div>
 
 </div>
