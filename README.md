@@ -4,14 +4,14 @@ https://quickshop.leilahajikhani2002.workers.dev/
 
 🌐 Frontend Project
 
-A responsive and modern frontend project built with HTML, CSS, Tailwind CSS, and keen slider.
+A responsive and modern frontend project built with HTML, CSS, Tailwind CSS, and swiper slider.
 
 ✨ Features
 
 - 📱 Fully responsive design
 - 🎨 Modern UI built with Tailwind CSS
 - 🧩 Custom CSS styling
-- 🖼️ Interactive sliders and carousels using keen slider
+- 🖼️ Interactive sliders and carousels using swiper slider
 - ⚡️ Fast and lightweight frontend
 - 📐 Mobile-first design
 
@@ -20,7 +20,7 @@ A responsive and modern frontend project built with HTML, CSS, Tailwind CSS, and
 - HTML5 — Page structure and semantic markup
 - CSS3 — Custom styling
 - Tailwind CSS — Utility-first CSS framework
-- keen slider — Responsive sliders and carousels
+- swiper slider — Responsive sliders and carousels
 - NPM — Package management
 
 📦 Installation
