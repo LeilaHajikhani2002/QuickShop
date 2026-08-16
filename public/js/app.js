@@ -110,21 +110,20 @@ blackLayer.addEventListener('click' , function(){
 
 shoppingCardBtn.addEventListener('click' , function(){
 
-    if(window.matchMedia("(max-width: 1279px)").matches){
-
-        mobileShoppingCard.classList.toggle('bottom-0')
-        blackLayer.classList.toggle('hidden')
-    }
-
+        mobileShoppingCard.classList.remove('-bottom-full')
+        mobileShoppingCard.classList.add('bottom-0')
+        blackLayer.classList.remove('hidden')
 
 })
 
 
 
 closeShoppingCardBtn.addEventListener('click' , function(){
+
     mobileShoppingCard.classList.add('-bottom-full')
     mobileShoppingCard.classList.remove('bottom-0')
-
-    blackLayer.classList.toggle('hidden')
+    blackLayer.classList.add('hidden')
 
 })
+
+//window.matchMedia("(max-width: 1279px)").matches
